@@ -3,12 +3,12 @@ package gps;
  * Bicicleta class
  * 
  * @Java IES Severo Ochoa
- * @2.0
+ * @2.1 Luispe
  */
 
 public class Bicicleta {
     public Bicicleta(){
-        int ruedas = 4;
+        int ruedas = 2;
         boolean luces = false;
         String marca = "Orbea";
     }
@@ -20,11 +20,13 @@ public class Bicicleta {
         int sum3 = 0;
         
         for(int i=0; i<camino1.length; i++)
-        {
-            sum1 += camino1[i];
-            sum2 += camino2[i];
-            sum3 += camino3[i];
-        }
+        {  sum1 += camino1[i];}
+        
+        for(int j=0; j<camino2.length; j++)
+        {  sum2 += camino2[j];}
+        
+        for(int k=0; k<camino3.length; k++)
+        {  sum3 += camino3[k];}
         
         if(sum1 < sum2 && sum1 < sum3)
         {
@@ -47,16 +49,15 @@ public class Bicicleta {
             }else{
                 return "caminos 1 y 2";
             }
-        }
-        
+        }      
     }
-
+    
     public static void main(String[] args) {
         Bicicleta bici = new Bicicleta();
         int[] camino1 = {12,34,21,46,25};
         int[] camino2 = {24,1,5,64,10,15,21};
         int[] camino3 = {1,5,6,7,8,10,20,46,104};
-        System.out.println("El camino mÃ¡s corto es:"+Bicicleta.rutaCorta(camino1,camino2,camino3)+".");
+        System.out.println("El camino más largo es:"+Bicicleta.rutaCorta(camino1,camino2,camino3)+".");
     }
 }
 
